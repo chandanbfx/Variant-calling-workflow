@@ -2,6 +2,20 @@
 Read alignment and BAM processing rules
 """
 
+rule bwa_index:
+    input:
+        fa=REF_FA
+    output:
+        fa_bwt="reference/chr1.fa.bwt"
+    resources:
+        mem_mb=config["bwaRam"],
+        disk_mb=config["bwaDisk"]
+    conda: "../envs/alignment.yaml"
+    shell:
+        """
+        bwa index {input.fa}
+        """
+
 rule bwa_map:
     """
     Align reads using BWA-MEM.

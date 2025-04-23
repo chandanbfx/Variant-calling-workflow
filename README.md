@@ -48,7 +48,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/variant-calling-snakemake.git
+git clone https://github.com/chandanbfx/Variant-calling-workflow.git
 cd variant-calling-snakemake
 ```
 
@@ -95,6 +95,16 @@ You can download these from:
 - [Broad GATK Resource Bundle](https://console.cloud.google.com/storage/browser/genomics-public-data/resources/broad/hg38/)
 - [dbSNP FTP](https://ftp.ncbi.nih.gov/snp/)
 - [ClinVar FTP](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/)
+
+---
+
+---
+
+# External Link for
+## Reference Files
+
+You can download `chr1.fa` from the following link:
+[Download chr1.fa from Google Drive] (https://drive.google.com/file/d/10ao_pvFXoG58Bpi2wusxXLQgB7BlPdW-/view?usp=sharing)
 
 ---
 
