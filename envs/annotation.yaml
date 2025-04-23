@@ -1,0 +1,10 @@
+name: annotation
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - snpeff=5.1d          # Latest SnpEff with GRCh38 support
+  - snpsift=5.1d         # Matching SnpSift version
+  - ensembl-vep=109.3    # Latest VEP release
+  - tabix=1.18           # For VCF indexing
+  - perl=5.32.1          # Required for VEP

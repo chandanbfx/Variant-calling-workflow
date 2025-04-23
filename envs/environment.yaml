@@ -1,0 +1,23 @@
+channels:
+  - conda-forge
+  - bioconda
+  - au-eoed
+dependencies:
+  - bioconda::snakemake-minimal =5.4.5
+  - python =3.6
+  - jinja2 =2.10
+  - networkx =2.1
+  - matplotlib =2.2.3
+  - graphviz =2.38.0
+  - samtools =1.9
+  - bwa =0.7.17
+  - pysam =0.15.0
+  - snpeff =4.3.1t
+  - snpsift =4.2
+  - ensembl-vep = 96.0
+  - bbmap =37.78
+  - gatk4 = 4.1.7.0
+  - rtg-tools = 3.9.1
+  - gnu-parallel = 20161122
+  - bbmap =37.78
+  - fastqc = 0.11.8

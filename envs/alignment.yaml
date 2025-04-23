@@ -1,0 +1,9 @@
+name: alignment
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - bwa=0.7.17           # Stable version (latest)
+  - samtools=1.18        # Recent version
+  - gatk4=4.4.0.0        # Latest GATK4 release
+  - pysam=0.21.0         # For BAM processing

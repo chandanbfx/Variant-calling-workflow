@@ -1,0 +1,78 @@
+sample_sheet: "config/samples.tsv"
+#all attributes are case sensitive
+#Quality cut-off. bases below this value will be trimmed.
+phred_cutoff: 20
+adapter: resources/adapters.fa
+
+#bed file name
+bedfile: resources/chr1_only.bed
+
+reference: reference/chr1.fa
+#resources for specific tool
+#here 130000=130gb and 100000=100gb
+qcThreads: 8
+qcRam: 30000
+qcDisk: 60000
+
+bwathreads: 15
+bwaRam: 130000
+bwaDisk: 100000
+
+siftThreads: 8
+siftRam: 64000
+siftDisk: 30000
+
+gatkThreads: 15
+gatkRam: 120000
+gatkDisk: 100000
+
+splitThreads: 4
+splitRam: 30000
+splitDisk: 10000
+
+#database used in snpsift annotation step.
+dbSNP: database/00-common_all.vcf.gz
+dbSNP_index: database/00-common_all.vcf.gz.tbi
+
+clinVar: database/clinvar_20250421.vcf.gz
+clinVar_index: database/clinvar_20250421.vcf.gz.tbi
+
+#known sites, used in base recalibration and vqsr 
+known_Sites: database/00-common_all.vcf.gz
+known_Sites_index: database/00-common_all.vcf.gz.tbi
+
+#Variant Recalibrator 
+#indel paramter
+indel_tranche_value: -tranche 100.0 -tranche 99.95 -tranche 99.9 -tranche 99.5 -tranche 97.0 -tranche 96.0 -tranche 95.0 -tranche 94.0 -tranche 93.5 -tranche 93.0 -tranche 92.0 -tranche 91.0 -tranche 90.0
+#snp parameter
+snp_tranche_value: -tranche 100.0 -tranche 99.95 -tranche 99.9 -tranche 99.8 -tranche 99.6 -tranche 99.5 -tranche 99.4 -tranche 99.3 -tranche 99.0 -tranche 98.0 -tranche 97.0 -tranche 90.0 -tranche 90.0
+
+#The names of the annotations which should used for calculations.
+indel_annotation: -an FS -an ReadPosRankSum -an MQRankSum -an QD -an SOR -an DP
+snp_annotation: -an FS -an ReadPosRankSum -an MQRankSum -an QD -an SOR -an DP 
+
+#Max number of Gaussians for the positive model
+indel_max_gaussians: 4
+snp_max_gaussians: 6
+
+
+#Apply Vqsr parameter
+#The truth sensitivity level at which to start filtering
+snp_tranches: 99.7
+indel_tranches: 99.7
+
+#resource_used in vqsr
+1000G_omni: database/1000G_omni2.5.hg38.vcf.gz
+omni_index: database/1000G_omni2.5.hg38.vcf.gz.tbi
+
+mills: database/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+mills_index: database/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz.tbi
+
+hapmap: database/hapmap_3.3.hg38.vcf.gz
+hapmap_index: database/hapmap_3.3.hg38.vcf.gz.idx
+
+Axiom: database/Axiom_Exome_Plus.genotypes.all_populations.poly.hg38.vcf.gz
+Axiom_index: database/Axiom_Exome_Plus.genotypes.all_populations.poly.hg38.vcf.gz.tbi
+
+1000G_phase: database/1000G_phase1.snps.high_confidence.hg38.vcf.gz
+1000G_phase_index: database/1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi

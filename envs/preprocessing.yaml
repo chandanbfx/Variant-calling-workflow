@@ -1,0 +1,10 @@
+name: preprocessing
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bbmap=39.01          # Recent version for trimming
+  - fastqc=0.12.1        # Quality control
+  - multiqc=1.14         # Aggregate QC reports
+  - python=3.10          # Modern Python version

@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+.env/
+.venv/
+venv/
+env/
+
+# Conda environments
+*.yml
+*.yaml
+*.lock
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Snakemake metadata and cache
+.snakemake/
+*.snakemake
+
+# Log files and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Hidden system files
+.DS_Store
+Thumbs.db
+
+# Output data (optional — customize as needed)
+data/
+!data/README.md
+
+# Reference genomes and indexes (optional)
+reference/
+!reference/README.md
+
+# Ignore database folder
+database/
+
+# Ignore scripts output (optional)
+scripts/__pycache__/

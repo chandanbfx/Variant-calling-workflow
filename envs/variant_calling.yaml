@@ -1,0 +1,10 @@
+name: variant_calling
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - gatk4=4.4.0.0        # Latest GATK
+  - bcftools=1.18         # For VCF processing
+  - parallel=20230722     # GNU Parallel for efficiency
+  - r-base=4.3.1         # For any R-based plotting
+  - r-ggplot2=3.4.4      # For visualization

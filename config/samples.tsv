@@ -1,0 +1,3 @@
+sample	fq1	fq2
+sample_A	data/TESTY_H7YRLADXX_S1_L001_R1_001.fastq.gz	data/TESTY_H7YRLADXX_S1_L001_R2_001.fastq.gz
+sample_B	data/TESTY_H7YRLADXX_S1_L002_R1_001.fastq.gz	data/TESTY_H7YRLADXX_S1_L002_R2_001.fastq.gz
