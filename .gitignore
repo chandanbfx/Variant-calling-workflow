@@ -39,6 +39,14 @@ data/
 reference/
 !reference/README.md
 
+#Ignore large reference file
+# Ignore large reference files
+reference/*.fa
+reference/*.bwt
+reference/*.pac
+reference/*.sa
+reference/*.zip
+
 # Ignore database folder
 database/
 
