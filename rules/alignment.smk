@@ -6,7 +6,7 @@ rule bwa_index:
     input:
         fa=REF_FA
     output:
-        fa_bwt="reference/chr1.fa.bwt"
+        index=touch("trimmed/check.txt")
     resources:
         mem_mb=config["bwaRam"],
         disk_mb=config["bwaDisk"]
@@ -23,7 +23,8 @@ rule bwa_map:
     input:
         forw="trimmed/{sample}_1_clean.fastq.gz",
         rev="trimmed/{sample}_2_clean.fastq.gz",
-        fa=REF_FA
+        fa=REF_FA,
+        index=touch("trimmed/check.txt")
     output:
         temp("mapped_reads/{sample}.bam")
     resources:
