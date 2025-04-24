@@ -1,4 +1,4 @@
-# 🧬 Variant Calling Workflow (Snakemake)
+# 🧬 Germline Variant Calling Pipeline (Snakemake)
 
 A modular and reproducible variant calling pipeline built using [Snakemake](https://snakemake.readthedocs.io/).
 Designed for short-read NGS data and tested on **chr1** of the human genome.
@@ -49,7 +49,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 
 ```bash
 git clone https://github.com/chandanbfx/germline-variant-calling-pipeline.git
-cd variant-calling-snakemake
+cd germline-variant-calling-pipeline
 ```
 
 ### 2. Install Mamba (Optional but Recommended)
