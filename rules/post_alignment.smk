@@ -5,14 +5,14 @@ rule AlignmentSummary:
         bam="sorted_reads/{sample}.sorted.bam"
     output:
         "mapped_reads/{sample}.AlignmentSummary.txt",
-    resources: mem_mb=64000, disk_mb=50000
+    resources: mem_mb=config["qcRam"], disk_mb=config["qcDisk"]
     conda:
         "environment.yaml"
     log:
         "logs/gatkAlignment/{sample}.log"
     threads: 8
     shell:
-        "gatk --java-options -Xmx30G CollectAlignmentSummaryMetrics -I {input.bam} -R {input.fa} -O {output}"
+        "gatk --java-options -Xmx{resources.mem_mb}M CollectAlignmentSummaryMetrics -I {input.bam} -R {input.fa} -O {output}"
 rule mark_duplicates:
     input:
         bam="sorted_reads/{sample}.sorted.bam",
@@ -49,4 +49,4 @@ rule apply_recalibration:
     log:
         "logs/gatkApplyBQSR/{sample}.log"
     shell:
-        "gatk --java-options -Xmx56G ApplyBQSR -I {input.bam} -R {input.fa} --bqsr-recal-file {input.table} -O {output}"
+        "gatk --java-options -Xmx{resources.mem_mb}M ApplyBQSR -I {input.bam} -R {input.fa} --bqsr-recal-file {input.table} -O {output}"

@@ -42,7 +42,7 @@ rule fastqc:
     resources:
         mem_mb=config["qcRam"],
         disk_mb=config["qcDisk"]
-    threads: 1
+    threads: config.get("qcThreads")
     conda: "../envs/preprocessing.yaml"
     log: "logs/fastqc/{sample}.log"
     shell:

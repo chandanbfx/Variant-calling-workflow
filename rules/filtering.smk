@@ -51,7 +51,14 @@ rule apply_vqsr_indel:
 rule vqsr_snp:
     input:
         vcf="variants/filtered/all_indelfiltered.vcf.gz",
-        resources=config["hapmap"]
+        hapmap=config["hapmap"],
+        hapmap_index=config["hapmap_index"],
+        omni=config["1000G_omni"],
+        omni_index=config["omni_index"],
+        phase_1000=config["1000G_phase"],
+        phase_1000_index=config["1000G_phase_index"],
+        dbSNP=config["known_Sites"],
+        dbSNP_index=config["known_Sites_index"]       
     output:
         recal="variants/vcf/all_snp.recal",
         tranches="variants/vcf/all_snp.tranches"
@@ -59,10 +66,11 @@ rule vqsr_snp:
         "variant_calling.yaml"
     shell:
         "gatk VariantRecalibrator -V {input.vcf} -mode SNP "
-        "-resource:hapmap,known=false,training=true,truth=true,prior=15 {input.resources} "
+        "-resource:hapmap,known=false,training=true,truth=true,prior=15 {input.hapmap} "
+        "-resource:1000G_phase,known=false,training=true,truth=true,prior=15 {input.phase_1000} "
+        "-resource:omni,known=false,training=true,truth=true,prior=15 {input.omni} "
+        "-resource:dbSNP,known=false,training=true,truth=true,prior=15 {input.dbSNP} "
         "-O {output.recal} --tranches-file {output.tranches}"
-
-
 rule apply_vqsr_snp:
     input:
         vcf="variants/filtered/all_indelfiltered.vcf.gz",

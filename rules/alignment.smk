@@ -24,7 +24,7 @@ rule bwa_map:
         forw="trimmed/{sample}_1_clean.fastq.gz",
         rev="trimmed/{sample}_2_clean.fastq.gz",
         fa=REF_FA,
-        index=touch("trimmed/check.txt")
+        index_check="trimmed/check.txt"
     output:
         temp("mapped_reads/{sample}.bam")
     resources:
@@ -46,11 +46,11 @@ rule sort_bam:
     output:
         "sorted_reads/{sample}.sorted.bam"
     resources:
-        mem_mb=130000,
-        disk_mb=100000
-    threads: 14
+        mem_mb=config["gatkRam"],
+        disk_mb=config["gatkDisk"]
+    threads: config.get("gatkThreads")
     conda: "../envs/alignment.yaml"
     log: "logs/sort/{sample}.log"
     shell:
-        "gatk --java-options -Xmx56G SortSam "
+        "gatk --java-options -Xmx{resources.mem_mb}M SortSam "
         "-I {input} -O {output} -SO coordinate"
