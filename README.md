@@ -48,7 +48,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/chandanbfx/Variant-calling-workflow.git
+git clone https://github.com/chandanbfx/germline-variant-calling-pipeline.git
 cd variant-calling-snakemake
 ```
 
