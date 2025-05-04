@@ -1,4 +1,4 @@
-# 🧬 Germline Variant Calling Pipeline (Snakemake)
+# Germline Variant Calling Pipeline (Snakemake)
 
 A modular and reproducible variant calling pipeline built using [Snakemake](https://snakemake.readthedocs.io/).
 Designed for short-read NGS data and tested on **chr1** of the human genome.
