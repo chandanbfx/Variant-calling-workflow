@@ -5,7 +5,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Adapter trimming and quality control (BBDuk)
 - Read alignment using BWA
@@ -16,7 +16,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -43,7 +43,7 @@ Designed for short-read NGS data and tested on **chr1** of the human genome.
 
 ---
 
-## 📦 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -72,7 +72,7 @@ snakemake --use-conda --cores 8
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 Located in `config/config.yaml`, this file controls:
 - Sample sheet: `config/samples.tsv`
@@ -83,7 +83,7 @@ Located in `config/config.yaml`, this file controls:
 
 ---
 
-## 📂 External Databases (Not Included)
+## External Databases (Not Included)
 
 The following large files must be placed in `database/` manually:
 
@@ -108,7 +108,7 @@ You can download `chr1.fa` from the following link:
 
 ---
 
-## 🧪 Test Dataset
+## Test Dataset
 
 For lightweight testing, this project uses:
 - Paired-end FASTQs aligned to `chr1`
@@ -116,13 +116,13 @@ For lightweight testing, this project uses:
 
 ---
 
-## 📜 License
+## License
 
 MIT License
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [Snakemake](https://snakemake.readthedocs.io/)
 - [BWA](http://bio-bwa.sourceforge.net/)
